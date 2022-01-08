@@ -1,7 +1,7 @@
 package Tests;
 
 import org.junit.*;
-
+import Core.*;
 
 
 public class ContractsTest extends Assert{
