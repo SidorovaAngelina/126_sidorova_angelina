@@ -10,5 +10,12 @@ public class ContractsTest extends Assert{
         Contract contract = Contract.create();
         assertEquals(0, contract.getContractsCount());
     }
+
+    @Test
+    public void addContract_AddContractsWithNumberAndData_ContractsCountEqualsOne() {
+        Contract contract = Contract.create();
+        contract.addContract("number", "date");
+        assertEquals(1, contract.getContractsCount());
+    }
 }
 
