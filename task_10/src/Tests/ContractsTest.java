@@ -38,5 +38,13 @@ public class ContractsTest extends Assert{
         assertTrue(exc.getMessage().toLowerCase().contains("number can't be null") &&
                         exc.getMessage().toLowerCase().contains("date can't be null"));
     }
+
+    @Test
+    public void registerPaymentDocument_registerPaymentDocumentWithData_DocumentsEqualsOne(){
+        Contract contract = Contract.create();
+        contract.addContract("1", "20220101");
+        contract.registerPaymentDocument(100, 1, PaymentOrder, "1", 20220102);
+        assertEquals(1, contract.getContracts().get("1").getPaymentDocumentsCount());
+    }
 }
 
