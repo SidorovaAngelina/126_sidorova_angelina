@@ -23,6 +23,5 @@ public class Contract {
     public static Contract create(){
         return new Contract();
     }
-
-    public void registerPaymentDocument(int sum, int PaymentDocumentNumber, PaymentDocumetType paymentType, String contractNumber, String date)
+    
 }
