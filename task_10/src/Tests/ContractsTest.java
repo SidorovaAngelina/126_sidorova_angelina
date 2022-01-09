@@ -3,6 +3,8 @@ package Tests;
 import org.junit.*;
 import Core.*;
 
+import java.util.Locale;
+
 
 public class ContractsTest extends Assert{
     @Test
@@ -16,6 +18,12 @@ public class ContractsTest extends Assert{
         Contract contract = Contract.create();
         contract.addContract("number", "date");
         assertEquals(1, contract.getContractsCount());
+    }
+    @Test
+    public void addContract_AddContractsWithNullNumber_ThrowsException() {
+        Contract contract = Contract.create();
+        var exc = assertThrows(IllegalArgumentException.class, () -> contract.addContract(null, "date"));
+        assertTrue(exc.getMessage().toLowerCase().contains("number can't be null"));
     }
 }
 

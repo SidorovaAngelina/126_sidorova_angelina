@@ -7,7 +7,6 @@ public class Contract {
     }
     public void addContract(String number, String date){
         contractsCount++;
-
     }
 
     public int getContractsCount(){
