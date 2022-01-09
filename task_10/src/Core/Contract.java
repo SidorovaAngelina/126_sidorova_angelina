@@ -6,18 +6,21 @@ public class Contract {
         contractsCount = 0;
     }
     public void addContract(String number, String date){
-        if(number==null && date==null)
-            throw new IllegalArgumentException("Number can't be null, Date can't be null");
+        StringBuilder error = new StringBuilder();
         if(number==null)
-            throw new IllegalArgumentException("Number can't be null");
+            error.append("Number can't be null\n");
         if(date==null)
-            throw new IllegalArgumentException("Date can't be null");
+            error.append("Date can't be null\n");
+        if(!error.isEmpty())
+            throw new IllegalArgumentException(error.toString());
         contractsCount++;
     }
 
     public int getContractsCount(){
         return contractsCount;
     }
+
+
 
     public static Contract create(){
         return new Contract();
