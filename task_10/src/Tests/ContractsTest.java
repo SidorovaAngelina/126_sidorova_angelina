@@ -3,6 +3,9 @@ package Tests;
 import org.junit.*;
 import Core.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import java.util.Locale;
 
 
@@ -37,6 +40,13 @@ public class ContractsTest extends Assert{
         var exc = assertThrows(IllegalArgumentException.class, () -> contract.addContract(null, null));
         assertTrue(exc.getMessage().toLowerCase().contains("number can't be null") &&
                         exc.getMessage().toLowerCase().contains("date can't be null"));
+    }
+    @Test
+    public void registerPayDoc_registerPayDoc_ContractsCountEqualsOne(){
+        Contract contract = Contract.create();
+        contract.addContract("1","20220101");
+        Contract.addPayDoc(10000, 1, PayDocType.PaymentOrder, "1", "20220101");
+        assertEquals(1, Contract.getContracts().get("1").getPayDocCount());
     }
 }
 

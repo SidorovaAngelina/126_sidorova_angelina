@@ -1,5 +1,9 @@
 package Core;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Contract {
     private int contractsCount;
     private Contract(){
@@ -23,5 +27,7 @@ public class Contract {
     public static Contract create(){
         return new Contract();
     }
-    
+
+
+
 }
