@@ -5,29 +5,62 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ContractsBook {
-    private int contCount;
 
-    private ContractsBook() {
-        contCount = 0;
+    private int PaymentContCount;
+    private HashMap<String, Contract> data;
+
+    public ContractsBook() {
+        data = new HashMap<>();
+        PaymentContCount = 0;
+    }
+
+    public void addCont(String number, String date) {
+        StringBuilder error = new StringBuilder();
+
+        if (number == null) {
+            error.append("Number can't be null\n");
+        }
+        if (date == null) {
+            error.append("Date can't be null\n");
+        }
+        if (!error.isEmpty()) {
+            throw new IllegalArgumentException(error.toString());
+        }
+        if (!data.containsKey(number)) {
+            data.put(number, new Contract(date));
+            System.out.println("The contract is registered!");
+
+        }
+
     }
 
     public int getContCount() {
-        return contCount;
+        return data.size();
     }
 
     public static ContractsBook create() {
         return new ContractsBook();
     }
 
-    public void addCont(String number, String date){
-        if(number==null && date==null)
-            throw new IllegalArgumentException("Number can't be null, Date can't be null");
-        if(number==null)
-            throw new IllegalArgumentException("Number can't be null");
-        if(date==null)
-            throw new IllegalArgumentException("Date can't be null");
-        contCount++;
+    public HashMap<String, Contract> getConts() {
+        return data;
     }
 
-}
+    public void registerPaymentCont(int sum, int paymentContNumber, String contNumber, TypeOfPaymentCont type, String date) {
+        StringBuilder error = new StringBuilder();
+        if (sum < 0) {
+            error.append("Sum is positive\n");
+        }
+        if (paymentContNumber < 0) {
+            error.append("Number of payment contract is positive\n");
+        }
+        if (!error.isEmpty()) {
+            throw new IllegalArgumentException(error.toString());
+        } else {
+            data.get(contNumber).registerPaymentDoc(sum, paymentContNumber, type, date);
+            PaymentContCount++;
+            System.out.println("Created successfully!");
 
+        }
+    }
+}
