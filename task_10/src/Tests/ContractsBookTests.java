@@ -21,6 +21,31 @@ public class ContractsBookTests extends Assert {
         contractsBook.addCont("number", "date");
         assertEquals(1, contractsBook.getContCount());
     }
+    /* @Test
+    public void addCont_addDContWithNullNumber_ThrowsException(){
+        ContractsBook contractsBook = ContractsBook.create();
+        var exc = assertThrows(IllegalArgumentException.class, () -> contractsBook.addCont(null,"date"));
+        assertTrue(exc.getMessage().toLowerCase().contains("Number can't be null"));
+    }
+    @Test
+    public void addCont_addContWithNullDate_ThrowsException(){
+        ContractsBook contractsBook = ContractsBook.create();
+        var exc = assertThrows(IllegalArgumentException.class, () -> contractsBook.addCont("number",null));
+        assertTrue(exc.getMessage().toLowerCase().contains("Date can'tt be null"));
+    }
+
+
+    @Test
+    public void addCont_addContWithNullNumberAndNullDate_ThrowsException(){
+        ContractsBook contractsBook = ContractsBook.create();
+        var exc = assertThrows(IllegalArgumentException.class, () -> contractsBook.addCont(null,null));
+        assertTrue(exc.getMessage().toLowerCase().contains("Number can't be null") &&
+                exc.getMessage().toLowerCase().contains("Date can't be null"));
+    }
+    */
+
+
+
 
 
 
@@ -47,6 +72,18 @@ public class ContractsBookTests extends Assert {
         contractsBook.registerPaymentCont(300000, 3, "number", TypeOfPaymentCont.BankOrder, "20050505");
         assertEquals(3, contractsBook.getConts().get("number").getPaymentContCount());
     }
+    /* не раб.
+    @Test
+    public void registerPaymentCont_registerPaymentContWithSumLessThenZero_TrowsException(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("number","date");
+        var exc = assertThrows(IllegalArgumentException.class, () ->
+                contractsBook.registerPaymentCont(-12000, 1, "number", TypeOfPaymentCont.PaymentOrder, "20010901"));
+        assertTrue(exc.getMessage().toLowerCase().contains("Sum is positive"));
+    }
+     */
+
+
 
 
 

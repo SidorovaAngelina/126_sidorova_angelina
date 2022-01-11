@@ -13,9 +13,8 @@ public class ContractsBook {
     }
     public void addCont(String number, String date) {
         StringBuilder error = new StringBuilder();
-
         if (number == null) {
-            error.append("Number can't be null\n");
+            error.append("Number can''t be null\n");
         }
         if (date == null) {
             error.append("Date can't be null\n");
@@ -39,6 +38,12 @@ public class ContractsBook {
     }
     public void registerPaymentCont(int sum, int paymentContNumber, String contNumber, TypeOfPaymentCont type, String date) {
         StringBuilder error = new StringBuilder();
+        if(contNumber == null){
+            error.append("Number can't be null\n");
+        }
+        if(date == null){
+            error.append("Date can't be null\n");
+        }
         if (sum < 0) {
             error.append("Sum is positive\n");
         }
