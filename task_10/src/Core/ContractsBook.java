@@ -72,5 +72,8 @@ public class ContractsBook {
 
         return payments;
     }
+    public void deletePayment(String contNumber, int paymentContNumber, String paymentContDate) {
+        data.get(contNumber).getPaymentDocuments().remove(paymentContNumber);
+    }
 
 }

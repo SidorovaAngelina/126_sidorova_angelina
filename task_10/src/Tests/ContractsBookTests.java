@@ -73,4 +73,17 @@ public class ContractsBookTests extends Assert {
         paymentConts.add(900000);
         assertArrayEquals(paymentConts.toArray(), contractsBook.getAllPayments().toArray());
     }
+
+
+    @Test
+    public void deletePaymentCont_DeletePaymentContWithContNumberAndDate_PaymentContCountEqualsZero(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("number","20160703");
+        contractsBook.registerPaymentCont(100000,2, "number", TypeOfPaymentCont.PaymentOrder,"20161023");
+        contractsBook.registerPaymentCont(100000,1, "number", TypeOfPaymentCont.PaymentOrder,"202001221");
+        contractsBook.deletePayment( "number", 2, "20161023");
+        contractsBook.deletePayment( "number", 1, "202001221");
+        assertEquals(0, contractsBook.getConts().get("number").getPaymentContCount());
+    }
+
 }
