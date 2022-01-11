@@ -63,7 +63,6 @@ public class ContractsBookTests extends Assert {
         contractsBook.registerPaymentCont(300000, 1, "number2", TypeOfPaymentCont.PaymentOrder, "20000202");
         contractsBook.registerPaymentCont(200000, 2, "number2", TypeOfPaymentCont.BankOrder, "20000202");
         contractsBook.registerPaymentCont(900000, 3, "number2", TypeOfPaymentCont.PaymentOrder, "20000202");
-
         List<Integer> paymentConts = new ArrayList();
         paymentConts.add(700000);
         paymentConts.add(100000);
@@ -105,4 +104,20 @@ public class ContractsBookTests extends Assert {
         assertEquals(80000, contractsBook.getConts().get("153").getSumOfPayments());
     }
 
+
+
+    @Test
+    public void getListOfPayments_GetAllPaymentsFromCont_EqualLists(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("333","20150313");
+        contractsBook.registerPaymentCont(600000,201,"333", TypeOfPaymentCont.BankOrder, "20220101");
+        contractsBook.registerPaymentCont(400000,202,"333", TypeOfPaymentCont.BankOrder, "20110919");
+        contractsBook.addCont("545","20200327");
+        contractsBook.registerPaymentCont(300000,201,"545", TypeOfPaymentCont.BankOrder, "20220101");
+        contractsBook.registerPaymentCont(100000,202,"545", TypeOfPaymentCont.BankOrder, "20110919");
+        List<Integer> sums = new ArrayList();
+        sums.add(600000);
+        sums.add(400000);
+        assertArrayEquals(sums.toArray(), contractsBook.getConts().get("333").getListOfPayments().toArray());
+    }
 }

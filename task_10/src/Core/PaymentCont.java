@@ -13,7 +13,6 @@ public class PaymentCont {
     public int getSum(){
         return sum;
     }
-
 }
 
 
