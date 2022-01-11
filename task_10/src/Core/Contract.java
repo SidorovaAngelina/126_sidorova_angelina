@@ -13,12 +13,16 @@ public class Contract {
         this.date = date;
         paymentConts = new HashMap<>();
     }
-    public void registerPaymentDoc(int summ, int number, TypeOfPaymentCont type, String date){
-        paymentConts.put(number,new PaymentCont(summ,type,date));
+    public void registerPaymentDoc(int sum, int number, TypeOfPaymentCont type, String date){
+        paymentConts.put(number,new PaymentCont(sum,type,date));
     }
 
     public int getPaymentContCount() {
         return paymentConts.size();
     }
+    public HashMap<Integer, PaymentCont> getPaymentDocuments(){
+        return paymentConts;
+    }
+
 }
 

@@ -63,4 +63,14 @@ public class ContractsBook {
 
         }
     }
+    public List<Integer> getAllPayments() {
+        List<Integer> payments = new ArrayList();
+        for (Contract contract : data.values()) {
+            for (PaymentCont paymentCont : contract.getPaymentDocuments().values())
+                payments.add(paymentCont.getSum());
+        }
+
+        return payments;
+    }
+
 }
