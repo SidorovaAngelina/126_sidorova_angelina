@@ -3,6 +3,7 @@ package Core;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class ContractsBook {
     private int PaymentContCount;
@@ -71,4 +72,59 @@ public class ContractsBook {
     public void deletePayment(String contNumber, int paymentContNumber, String paymentContDate) {
         data.get(contNumber).getPaymentContracts().remove(paymentContNumber);
     }
+
+
+
+
+
+
+
+    public void commandList(){
+        System.out.println("1 - adding a contract");
+        System.out.println("2 - adding payment contract");
+        System.out.println("3 - calculation of the sum of all payments of the contract with the specified number");
+        Scanner sc = new Scanner(System.in);
+        String command = sc.nextLine();
+        run(command);
+    }
+    public void run(String command){
+        ContractsBook.create();
+        Scanner sc = new Scanner(System.in);
+        switch (command) {
+
+            case "1":
+                System.out.println("Enter number of the contract");
+                String number = sc.nextLine();
+                System.out.println("Enter the date");
+                String date = sc.nextLine();
+                addCont(number, date);
+                commandList();
+
+            case "2":
+                System.out.println("Enter number of the contract");
+                String numberDoc = sc.nextLine();
+                System.out.println("Enter the date");
+                String datePay = sc.nextLine();
+                System.out.println("Enter the sum");
+                int sum = sc.nextInt();
+                System.out.println("Enter the number");
+                int numberPay = sc.nextInt();
+                System.out.println("Enter 1 if BankOrder, enter 2 if PaymentOrder ");
+                int type = sc.nextInt();
+                if(type==1) registerPaymentCont(sum, numberPay, numberDoc, TypeOfPaymentCont.BankOrder, datePay);
+                else if(type==2)  registerPaymentCont(sum, numberPay, numberDoc, TypeOfPaymentCont.PaymentOrder,  datePay);
+                else System.out.println("try again(");
+                commandList();
+
+            case "3":
+                System.out.println("Enter the number");
+                String contNumber = sc.nextLine();
+                System.out.println(getConts().get(contNumber).getSumOfPayments());
+                commandList();
+            default:
+                System.out.println("Try again(");
+        }
+
+    }
+
 }
