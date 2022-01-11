@@ -13,4 +13,11 @@ public class ContractsBookTests extends Assert {
         ContractsBook contractsBook = ContractsBook.create();
         assertEquals(0, contractsBook.getContCount());
     }
+    @Test
+    public void addCont_addContWithNumberAndDate_ContCountEqualsOne(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("number","date");
+        assertEquals(1, contractsBook.getContCount());
+    }
+
 }
