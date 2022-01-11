@@ -23,6 +23,14 @@ public class Contract {
     public HashMap<Integer, PaymentCont> getPaymentDocuments(){
         return paymentConts;
     }
+    public int getSumOfPayments() {
+        int sum=0;
+        for(PaymentCont doc : paymentConts.values()){
+            sum += doc.getSum();
+        }
+        return sum;
+    }
+
 
 }
 

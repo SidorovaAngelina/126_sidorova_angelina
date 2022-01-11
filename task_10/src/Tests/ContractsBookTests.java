@@ -94,4 +94,15 @@ public class ContractsBookTests extends Assert {
         assertEquals(1, contractsBook.getConts().get("number").getPaymentContCount());
     }
 
+
+
+    @Test
+    public void getGeneralSum_GetContGeneralSumOfPayments_GeneralSumEquals80000(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("153","20210212");
+        contractsBook.registerPaymentCont(30000,101,"153", TypeOfPaymentCont.BankOrder, "20220101");
+        contractsBook.registerPaymentCont(50000,102,"153", TypeOfPaymentCont.BankOrder, "20130402");
+        assertEquals(80000, contractsBook.getConts().get("153").getSumOfPayments());
+    }
+
 }
