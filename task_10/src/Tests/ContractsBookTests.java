@@ -85,5 +85,13 @@ public class ContractsBookTests extends Assert {
         contractsBook.deletePayment( "number", 1, "202001221");
         assertEquals(0, contractsBook.getConts().get("number").getPaymentContCount());
     }
+    @Test
+    public void deletePaymentCont_DeleteNonExistentPaymentCont_EqualsOne(){
+        ContractsBook contractsBook = ContractsBook.create();
+        contractsBook.addCont("number","20100116");
+        contractsBook.registerPaymentCont(100,2, "number", TypeOfPaymentCont.PaymentOrder,"20101216");
+        contractsBook.deletePayment( "number", 1, "20170313");
+        assertEquals(1, contractsBook.getConts().get("number").getPaymentContCount());
+    }
 
 }
