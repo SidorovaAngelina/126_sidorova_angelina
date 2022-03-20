@@ -17,7 +17,7 @@ public class DynamicArray<T> {
         capacity = size;
     }
 
-    public void resize(int newSize) {
+    public void resize(int newSize) {  //done
         if(newSize < 0)
             throw new NegativeArraySizeException("Size can not be negative");
         if(newSize > capacity) {
@@ -26,44 +26,44 @@ public class DynamicArray<T> {
             size=newSize;
         }
     }
-    public T get(int index) {
-        if(index < 0 || index > size)
+    public T get(int index) {        //done
+        if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("Index out of bounds");
         return (T)data[index];
     }
-    public void set(int index, T value) {
-        if(index < 0 || index > size)
+    public void set(int index, T value) { //done
+        if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("Index out of bounds");
         data[index] = value;
     }
-    public void insert(int index, T value) {
-        if(index < 0 || index > size)
+    public void insert(int index, T value) {  //done
+        if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("Index out of bounds");
-        if(capacity < size) {
+        if(capacity <= size) {
             data = Arrays.copyOf(data, size * 2);
             capacity = size * 2;
         }
         for(int i = size - 1; i >= index; --i)
             data[i + 1] = data[i];
         ++size;
-        data[size] = value;
+        data[index] = value;
     }
-    public void pushBack(T value) {
-        if(capacity < size) {
+    public void pushBack(T value) {   //done
+        if(capacity <= size) {
             data = Arrays.copyOf(data, size * 2);
             capacity = size * 2;
         }
-        data[capacity] = value;
+        data[size] = value;
         ++size;
     }
-    public void popBack() {
-        if(size < 0)
+    public void popBack() {   //done
+        if(size == 0)
             throw new UnsupportedOperationException("Array is empty");
         --size;
         data[size] = null;
     }
-    public void remove(int index) {
-        if(index < 0 || index > size)
+    public void remove(int index) {  //done
+        if(index < 0 || index >= size)
             throw new IndexOutOfBoundsException("Index out of bounds");
         for(int i = index + 1; i < size; ++i)
             data[i - 1] = data[i];
