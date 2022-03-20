@@ -1,0 +1,5 @@
+DynamicArray|11|size=1                      -> size=0                  |DynamicArray_createArray_ArrayCreated
+DynamicArray|15|data = new Object[capacity] -> data = new Object[size] |get_getThirdFromArray_Correct
+DynamicArray|21|if(newSize > 0)             -> if(newSize < 0)         |resize_setNewPositiveSize_Correct
+DynamicArray|27|newSize=size;               -> size=newSize;           |resize_setNewPositiveSize_Correct # теперь она В if
+DynamicArray|23|if(newSize != capacity)     -> if(newSize > capacity)  |resize_setNewSizeLessThanSize_WithoutChanges
