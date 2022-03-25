@@ -12,3 +12,15 @@ DynamicArray |52| if(capacity < size)           -> if(capacity <= size)         
 DynamicArray |56| data[capacity] = value        -> data[size] = value             |pushBack_pushBackElem_ElemCorrect
 DynamicArray |60| if(size < 0)                  -> if(size == 0)                  |popBack_popBackElemFromEmptyArray_ThrowsException
 DynamicArray |66| if(index < 0 || index > size) -> if(index < 0 || index >= size) |remove_removeElemWithIndexEqualsSize_ThrowsException
+
+Node |13| this.next = prev; -> this.next = next; |getNext_getDataOfNextElem_ElemCorrect
+Node |14| this.prev = next; -> this.prev = prev; |getNext_getDataOfNextElem_ElemCorrect
+
+DoubleLinkedList |11| return dummy == dummy                 -> return dummy == dummy.getNext();      |isEmpty_checkListWithElem_isEmptyFalse
+DoubleLinkedList |17| return dummy.getPrev();               -> return dummy.getNext();               |pushFront_pushToEmptyList_HeadAndTailCorrect
+DoubleLinkedList |20| return dummy.getNext();               -> return dummy.getPrev();               |pushFront_pushToEmptyList_HeadAndTailCorrect
+DoubleLinkedList |33| --size                                -> ++size                                |pushBack_pushToEmptyList_sizeEqualsOne
+DoubleLinkedList |28| cur = cur.getPrev();                  -> cur = cur.getNext();                  |get_getElemByIndex_GetCorrectElem
+DoubleLinkedList |24| if(index < 0 || index > size)         -> if(index < 0 || index >= size)        |get_getElemByIndexEqualsSize_ThrowsException
+DoubleLinkedList |41| return insertBefore(getTail(), data); -> return insertBefore(getHead(), data); |pushFront_pushThreeElem_HeadAndTailAreCorrect
+DoubleLinkedList |44| return insertAfter(getHead(), data);  -> return insertAfter(getTail(), data);  |pushFront_pushThreeElem_HeadAndTailAreCorrect
