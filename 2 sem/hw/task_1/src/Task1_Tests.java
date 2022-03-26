@@ -223,13 +223,13 @@ public class Task1_Tests extends Assert {
     @Test
     public void insertListAfter_insertListAfterSecondElem_OrderIsCorrect(){
         DoubleLinkedList<Integer> list1 = new DoubleLinkedList<>();
-        list1.pushBack(10);
-        Node<Integer> elem = (Node<Integer>) list1.pushBack(20);
-        list1.pushBack(30);
-        list1.pushBack(40);
+        list1.pushBack(1);
+        Node<Integer> elem = (Node<Integer>) list1.pushBack(2);
+        list1.pushBack(3);
+        list1.pushBack(4);
         DoubleLinkedList<Integer> list2 = new DoubleLinkedList<>();
-        list2.pushBack(50);
-        list2.pushBack(60);
+        list2.pushBack(5);
+        list2.pushBack(6);
         list1.insertListAfter(list1.get(1), list2);
         Node<Integer> zero = (Node<Integer>) list1.get(0);
         Node<Integer> one = (Node<Integer>) list1.get(1);
@@ -237,11 +237,32 @@ public class Task1_Tests extends Assert {
         Node<Integer> three = (Node<Integer>) list1.get(3);
         Node<Integer> four = (Node<Integer>) list1.get(4);
         Node<Integer> five = (Node<Integer>) list1.get(5);
-        assertEquals(10, zero.getData().intValue());
-        assertEquals(20, one.getData().intValue());
-        assertEquals(50, two.getData().intValue());
-        assertEquals(60, three.getData().intValue());
-        assertEquals(30, four.getData().intValue());
-        assertEquals(40, five.getData().intValue());
+        assertEquals(1, zero.getData().intValue());
+        assertEquals(2, one.getData().intValue());
+        assertEquals(5, two.getData().intValue());
+        assertEquals(6, three.getData().intValue());
+        assertEquals(3, four.getData().intValue());
+        assertEquals(4, five.getData().intValue());
+    }
+    @Test
+    public void insertListBefore_insertListBeforeSecondElem_OrderIsCorrect(){
+        DoubleLinkedList<Integer> list1 = new DoubleLinkedList<>();
+        list1.pushBack(1);
+        list1.pushBack(2);
+        list1.pushBack(3);
+        DoubleLinkedList<Integer> list2 = new DoubleLinkedList<>();
+        list2.pushBack(5);
+        list2.pushBack(6);
+        list1.insertListBefore(list1.get(1), list2);
+        Node<Integer> zero = (Node<Integer>) list1.get(0);
+        Node<Integer> one = (Node<Integer>) list1.get(1);
+        Node<Integer> two = (Node<Integer>) list1.get(2);
+        Node<Integer> three = (Node<Integer>) list1.get(3);
+        Node<Integer> four = (Node<Integer>) list1.get(4);
+        assertEquals(1, zero.getData().intValue());
+        assertEquals(5, one.getData().intValue());
+        assertEquals(6, two.getData().intValue());
+        assertEquals(2, three.getData().intValue());
+        assertEquals(3, four.getData().intValue());
     }
 }
