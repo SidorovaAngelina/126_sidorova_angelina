@@ -201,4 +201,47 @@ public class Task1_Tests extends Assert {
         assertEquals(7, head.getData().intValue());
         assertEquals(5, tail.getData().intValue());
     }
+    @Test
+    public void remove_RemoveElemFromList_ListIsEmpty(){
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        Node<Integer> Node = (Node<Integer>) list.pushBack(5);
+        list.remove(Node);
+        assertTrue(list.isEmpty());
+    }
+    @Test
+    public void remove_RemoveElemFromList_ElemAreMoved(){
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        Node<Integer> ElemFirst = (Node<Integer>) list.pushBack(1);
+        Node<Integer> ElemSecond = (Node<Integer>) list.pushBack(5);
+        Node<Integer> ElemThird = (Node<Integer>) list.pushBack(7);
+        list.remove(ElemFirst);
+        Node<Integer> Head = (Node<Integer>) list.getHead();
+        Node<Integer> Tail = (Node<Integer>) list.getTail();
+        assertEquals(5, Head.getData().intValue());
+        assertEquals(7, Tail.getData().intValue());
+    }
+    @Test
+    public void insertListAfter_insertListAfterSecondElem_OrderIsCorrect(){
+        DoubleLinkedList<Integer> list1 = new DoubleLinkedList<>();
+        list1.pushBack(10);
+        Node<Integer> elem = (Node<Integer>) list1.pushBack(20);
+        list1.pushBack(30);
+        list1.pushBack(40);
+        DoubleLinkedList<Integer> list2 = new DoubleLinkedList<>();
+        list2.pushBack(50);
+        list2.pushBack(60);
+        list1.insertListAfter(list1.get(1), list2);
+        Node<Integer> zero = (Node<Integer>) list1.get(0);
+        Node<Integer> one = (Node<Integer>) list1.get(1);
+        Node<Integer> two = (Node<Integer>) list1.get(2);
+        Node<Integer> three = (Node<Integer>) list1.get(3);
+        Node<Integer> four = (Node<Integer>) list1.get(4);
+        Node<Integer> five = (Node<Integer>) list1.get(5);
+        assertEquals(10, zero.getData().intValue());
+        assertEquals(20, one.getData().intValue());
+        assertEquals(50, two.getData().intValue());
+        assertEquals(60, three.getData().intValue());
+        assertEquals(30, four.getData().intValue());
+        assertEquals(40, five.getData().intValue());
+    }
 }
