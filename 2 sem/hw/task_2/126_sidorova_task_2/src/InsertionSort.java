@@ -3,9 +3,9 @@ public class InsertionSort<T> implements Sort<T> {
     public void sort(T[] data, MyComparator<T> comparator) {
         for (int sortedSize = 0; sortedSize < data.length; ++sortedSize) {
             int cur = sortedSize;
-            while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) <= 0){
+            while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) > 0){
                 swap(data, cur);
-                ++cur;
+                --cur;
             }
         }
     }
