@@ -1,37 +1,35 @@
-DynamicArray |11| size=1                        -> size=0                         |DynamicArray_createArray_ArrayCreated
-DynamicArray |15| data = new Object[capacity]   -> data = new Object[size]        |get_getThirdFromArray_Correct
-DynamicArray |21| if(newSize > 0)               -> if(newSize < 0)                |resize_setNewPositiveSize_Correct
-DynamicArray |27| newSize=size;                 -> size=newSize;                  |resize_setNewPositiveSize_Correct # теперь она В if
-DynamicArray |23| if(newSize != capacity)       -> if(newSize > capacity)         |resize_setNewSizeLessThanSize_WithoutChanges
-DynamicArray |30| if(index < 0 || index > size) -> if(index < 0 || index >= size) |get_getElemWithIndexEqualsSize_ThrowsException
-DynamicArray |35| if(index < 0 || index > size) -> if(index < 0 || index >= size) |set_setElemWithIndexEqualsSize_ThrowsException
-DynamicArray |40| if(index < 0 || index > size) -> if(index < 0 || index >= size) |insert_ElemWithIndexEqualsSize_ThrowsException
-DynamicArray |42| (capacity < size)             -> if(capacity <= size)           |insert_insertElem_Correct
-DynamicArray |49| data[size] = value            -> data[index] = value            |insert_insertElem_Correct
-DynamicArray |52| if(capacity < size)           -> if(capacity <= size)           |pushBack_pushBackElem_ElemCorrect
-DynamicArray |56| data[capacity] = value        -> data[size] = value             |pushBack_pushBackElem_ElemCorrect
-DynamicArray |60| if(size < 0)                  -> if(size == 0)                  |popBack_popBackElemFromEmptyArray_ThrowsException
-DynamicArray |66| if(index < 0 || index > size) -> if(index < 0 || index >= size) |remove_removeElemWithIndexEqualsSize_ThrowsException
-
-Node |13| this.next = prev; -> this.next = next; |getNext_getDataOfNextElem_ElemCorrect
-Node |14| this.prev = next; -> this.prev = prev; |getNext_getDataOfNextElem_ElemCorrect
-
-DoubleLinkedList |11| return dummy == dummy                   -> return dummy == dummy.getNext();        |isEmpty_checkListWithElem_isEmptyFalse
-DoubleLinkedList |17| return dummy.getPrev();                 -> return dummy.getNext();                 |pushFront_pushToEmptyList_HeadAndTailCorrect
-DoubleLinkedList |20| return dummy.getNext();                 -> return dummy.getPrev();                 |pushFront_pushToEmptyList_HeadAndTailCorrect
-DoubleLinkedList |33| --size                                  -> ++size                                  |pushBack_pushToEmptyList_sizeEqualsOne
-DoubleLinkedList |28| cur = cur.getPrev();                    -> cur = cur.getNext();                    |get_getElemByIndex_GetCorrectElem
-DoubleLinkedList |24| if(index < 0 || index > size)           -> if(index < 0 || index >= size)          |get_getElemByIndexEqualsSize_ThrowsException
-DoubleLinkedList |41| return insertBefore(getTail(), data);   -> return insertBefore(getHead(), data);   |pushFront_pushThreeElem_HeadAndTailAreCorrect
-DoubleLinkedList |44| return insertAfter(getHead(), data);    -> return insertAfter(getTail(), data);    |pushFront_pushThreeElem_HeadAndTailAreCorrect
-DoubleLinkedList |47| node.getPrev().setPrev(node.getNext()); -> node.getPrev().setNext(node.getNext()); |remove_RemoveElemFromList_ElemAreMoved
-DoubleLinkedList |48| node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev()); |remove_RemoveElemFromList_ElemAreMoved
-DoubleLinkedList |55| list.getHead().setNext(node);           -> list.getHead().setPrev(node);           |insertListAfter_insertListAfterSecondElem_OrderIsCorrect
-DoubleLinkedList |56| list.getTail().setPrev(node.getNext()); -> list.getTail().setNext(node.getNext()); |insertListAfter_insertListAfterSecondElem_OrderIsCorrect
-DoubleLinkedList |62|                                         -> size+=list.getSize();                   |insertListAfter_insertListAfterSecondElem_OrderIsCorrect
-DoubleLinkedList |67| list.getHead().setNext(node.getPrev()); -> list.getHead().setPrev(node.getPrev()); |insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
-DoubleLinkedList |68| list.getTail().setPrev(node);           -> list.getTail().setNext(node);           |insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
-DoubleLinkedList |75|                                         -> size+=list.getSize();                   |insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
+DynamicArray.java|11|size=1; -> size=0;|DynamicArray_createArray_ArrayCreated
+DynamicArray.java|15|data = new Object[capacity]; -> data = new Object[size];|get_getThirdFromArray_Correct
+DynamicArray.java|21|if(newSize > 0) -> if(newSize < 0)|resize_setNewPositiveSize_Correct
+DynamicArray.java|27|newSize=size; -> size=newSize;|resize_setNewPositiveSize_Correct
+DynamicArray.java|23|if(newSize != capacity) { -> if(newSize > capacity) {|resize_setNewSizeLessThanSize_WithoutChanges
+DynamicArray.java|30|if(index < 0 || index > size) -> if(index < 0 || index >= size)|get_getElemWithIndexEqualsSize_ThrowsException
+DynamicArray.java|35|if(index < 0 || index > size) -> if(index < 0 || index >= size)|set_setElemWithIndexEqualsSize_ThrowsException
+DynamicArray.java|40|if(index < 0 || index > size) -> if(index < 0 || index >= size)|insert_ElemWithIndexEqualsSize_ThrowsException
+DynamicArray.java|42|if(capacity < size) { -> if(capacity <= size) {|insert_insertElem_Correct
+DynamicArray.java|49|data[size] = value; -> data[index] = value;|insert_insertElem_Correct
+DynamicArray.java|52|if(capacity < size) { -> if(capacity <= size) {|pushBack_pushBackElem_ElemCorrect
+DynamicArray.java|56|data[capacity] = value; -> data[size] = value;|pushBack_pushBackElem_ElemCorrect
+DynamicArray.java|60|if(size < 0) -> if(size == 0)|popBack_popBackElemFromEmptyArray_ThrowsException
+DynamicArray.java|66|if(index < 0 || index > size) -> if(index < 0 || index >= size)|remove_removeElemWithIndexEqualsSize_ThrowsException
+Node.java|13|this.next = prev; -> this.next = next;|getNext_getDataOfNextElem_ElemCorrect
+Node.java|14|this.prev = next; -> this.prev = prev;|getNext_getDataOfNextElem_ElemCorrect
+DoubleLinkedList.java|11|return dummy == dummy; -> return dummy == dummy.getNext();|isEmpty_checkListWithElem_isEmptyFalse
+DoubleLinkedList.java|17|return dummy.getPrev(); -> return dummy.getNext();|pushFront_pushToEmptyList_HeadAndTailCorrect
+DoubleLinkedList.java|20|return dummy.getNext(); -> return dummy.getPrev();|pushFront_pushToEmptyList_HeadAndTailCorrect
+DoubleLinkedList.java|33|--size; -> ++size|pushBack_pushToEmptyList_sizeEqualsOne
+DoubleLinkedList.java|28|cur = cur.getPrev(); -> cur = cur.getNext();|get_getElemByIndex_GetCorrectElem
+DoubleLinkedList.java|24|if(index < 0 || index > size) -> if(index < 0 || index >= size)|get_getElemByIndexEqualsSize_ThrowsException
+DoubleLinkedList.java|41|return insertBefore(getTail(), data); -> return insertBefore(getHead(), data);|pushFront_pushThreeElem_HeadAndTailAreCorrect
+DoubleLinkedList.java|44|return insertAfter(getHead(), data); -> return insertAfter(getTail(), data);|pushFront_pushThreeElem_HeadAndTailAreCorrect
+DoubleLinkedList.java|47|node.getPrev().setPrev(node.getNext()); -> node.getPrev().setNext(node.getNext());|remove_RemoveElemFromList_ElemAreMoved
+DoubleLinkedList.java|48|node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev());|remove_RemoveElemFromList_ElemAreMoved
+DoubleLinkedList.java|55|list.getHead().setNext(node); -> list.getHead().setPrev(node);|insertListAfter_insertListAfterSecondElem_OrderIsCorrect
+DoubleLinkedList.java|56|list.getTail().setPrev(node.getNext()); -> list.getTail().setNext(node.getNext());|insertListAfter_insertListAfterSecondElem_OrderIsCorrect
+DoubleLinkedList.java|62| -> size+=list.getSize();|insertListAfter_insertListAfterSecondElem_OrderIsCorrect
+DoubleLinkedList.java|67|list.getHead().setNext(node.getPrev()); -> list.getHead().setPrev(node.getPrev());|insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
+DoubleLinkedList.java|68|list.getTail().setPrev(node); -> list.getTail().setNext(node);insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
+DoubleLinkedList.java|75| -> size+=list.getSize();|insertListBefore_insertListBeforeSecondElem_OrderIsCorrect
 
 
 
