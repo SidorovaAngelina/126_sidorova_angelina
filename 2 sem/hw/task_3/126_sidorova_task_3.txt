@@ -1,19 +1,17 @@
-HeapSort |10| swap(0, data.length - sortedSize);                         -> swap(0, data.length - sortedSize - 1);             |heapSort_HeapSortWithTHeSameElem_WithoutChanges
-HeapSort |17| for (int i = start; i >= 1; --i)                           -> for (int i = start; i >= 0; --i)                   |heapSort_HeapSortIsSorted_WithoutChanges
-HeapSort |18| siftDown(i, 2 * i, 2 * i + 1, data.length)                 -> siftDown(i, 2 * i+1, 2 * i + 2, data.length)       |heapSort_HeapSortIsSorted_WithoutChanges
-HeapSort |38| siftDown(right, 2 * right + 1, 2 * right + 2, data.length) -> siftDown(right, 2 * right + 1, 2 * right + 2, size)|heapSort_AnotherUnsorted_CorrectOrder
-HeapSort |34| siftDown(left, 2 * left, 2 * left + 1, size);              -> siftDown(left, 2 * left+1, 2 * left + 2, size);    |heapSort_HeapSortIsUnsortedWithSameElem_CorrectOrder
-
-MergeSort |35| else if (comparator.compare(from[firstFocus], from[secondFocus]) > 0) -> else if (comparator.compare(from[firstFocus], from[secondFocus]) < 0) |mergeSort_MergeSortIsSorted_CorrectOrder
-MergeSort |19| merge(buffer, sorting, begin, middle - begin, end - middle);          -> merge(buffer, sorting, begin, middle - begin + 1, end - middle);      |mergeSort_MergeSortIsUnsorted_CorrectOrder
-MergeSort |17| mergeSortRec(sorting, buffer, begin, middle);                         -> mergeSortRec(buffer, sorting, begin, middle);                         |mergeSort_MergeSortIsUnsortedWithMoreElem_CorrectOrder
-MergeSort |18| mergeSortRec(sorting, buffer, middle + 1, end);                       -> mergeSortRec(buffer, sorting, middle + 1, end);                       |mergeSort_MergeSortIsUnsortedWithMoreElem_CorrectOrder
-MergeSort |32| to[resPos] = from[secondFocus++];                                     -> to[resPos++] = from[secondFocus++];                                   |mergeSort_MergeSortIsUnsortedWithTheSameElem_CorrectOrder
-MergeSort |34| to[resPos++] = from[firstFocus];                                      -> to[resPos++] = from[firstFocus++];                                    |mergeSort_MergeSortWithNegativeElem_CorrectOrder
-
-QuickSort|12|int base = split(data, e,b); -> int base = split(data, b,e); |quickSort_QuickSortIsUnsorted_CorrectOrder
-QuickSort|24|swap(data, left, baseElem);  -> swap(data, left-1, baseElem);|quickSort_QuickSortIsUnsorted_CorrectOrder
-QuickSort|13|qSortRec(data, b, base - 2); -> qSortRec(data, b, base - 1); |quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort|14|qSortRec(data, base + 2, e); -> qSortRec(data, base + 1, e); |quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort|25|baseElem = left;             -> baseElem = left - 1;         |quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort|29|swap(data, left + 1, right); -> swap(data, left, right);     |quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
+HeapSort.java|10|swap(0, data.length - sortedSize); -> swap(0, data.length - sortedSize - 1);|heapSort_HeapSortWithTHeSameElem_WithoutChanges
+HeapSort.java|17|for (int i = start; i >= 1; --i) -> for (int i = start; i >= 0; --i)|heapSort_HeapSortIsSorted_WithoutChanges
+HeapSort.java|18|siftDown(i, 2 * i, 2 * i + 1, data.length); -> siftDown(i, 2 * i+1, 2 * i + 2, data.length);|heapSort_HeapSortIsSorted_WithoutChanges
+HeapSort.java|38|siftDown(right, 2 * right + 1, 2 * right + 2, data.length); -> siftDown(right, 2 * right + 1, 2 * right + 2, size);|heapSort_AnotherUnsorted_CorrectOrder
+HeapSort.java|34|siftDown(left, 2 * left, 2 * left + 1, size); -> siftDown(left, 2 * left+1, 2 * left + 2, size);|heapSort_HeapSortIsUnsortedWithSameElem_CorrectOrder
+MergeSort.java|35|else if (comparator.compare(from[firstFocus], from[secondFocus]) > 0) -> else if (comparator.compare(from[firstFocus], from[secondFocus]) < 0)|mergeSort_MergeSortIsSorted_CorrectOrder
+MergeSort.java|19|merge(buffer, sorting, begin, middle - begin, end - middle); -> merge(buffer, sorting, begin, middle - begin + 1, end - middle);|mergeSort_MergeSortIsUnsorted_CorrectOrder
+MergeSort.java|17|mergeSortRec(sorting, buffer, begin, middle); -> mergeSortRec(buffer, sorting, begin, middle);|mergeSort_MergeSortIsUnsortedWithMoreElem_CorrectOrder
+MergeSort.java|18|mergeSortRec(sorting, buffer, middle + 1, end); -> mergeSortRec(buffer, sorting, middle + 1, end);|mergeSort_MergeSortIsUnsortedWithMoreElem_CorrectOrder
+MergeSort.java|32|to[resPos] = from[secondFocus++]; -> to[resPos++] = from[secondFocus++];|mergeSort_MergeSortIsUnsortedWithTheSameElem_CorrectOrder
+MergeSort.java|34|to[resPos++] = from[firstFocus]; -> to[resPos++] = from[firstFocus++];|mergeSort_MergeSortWithNegativeElem_CorrectOrder
+QuickSort.java|12|int base = split(data, e, b); -> int base = split(data, b, e);|quickSort_QuickSortIsUnsorted_CorrectOrder
+QuickSort.java|24|swap(data, left, baseElem); -> swap(data, left-1, baseElem);|quickSort_QuickSortIsUnsorted_CorrectOrder
+QuickSort.java|13|qSortRec(data, b, base - 2); -> qSortRec(data, b, base - 1);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
+QuickSort.java|14|qSortRec(data, base + 2, e); -> qSortRec(data, base + 1, e);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
+QuickSort.java|25|baseElem = left; -> baseElem = left - 1;|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
+QuickSort.java|29|swap(data, left + 1, right); -> swap(data, left, right);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
