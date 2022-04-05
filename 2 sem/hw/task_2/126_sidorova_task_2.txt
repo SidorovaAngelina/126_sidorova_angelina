@@ -1,22 +1,13 @@
-BubbleSort |5| for(int i = 0; i < data.length - sps; ++i)       -> for(int i = 1; i < data.length - sps; ++i)       |bubbleSort_BubbleSortIsSorted_ArrayCorrect
+BubbleSort.java|5|for(int i = 0; i < data.length - sps; ++i) { -> for(int i = 1; i < data.length - sps; ++i) {|bubbleSort_BubbleSortIsSorted_ArrayCorrect
+BubbleSort.java|6|if(comparator.compare(data[i - 1], data[i]) < 0) { -> if(comparator.compare(data[i - 1], data[i]) > 0) {|bubbleSort_BubbleSortIsSorted_ArrayCorrect
+BubbleSort.java|4|for(int sps = 1; sps < data.length - 1; ++sps) { -> for(int sps = 0; sps < data.length - 1; ++sps) {|bubbleSort_BubbleSortIsUnsorted_CorrectOrder
 
-BubbleSort |6| if(comparator.compare(data[i - 1], data[i]) < 0) -> if(comparator.compare(data[i - 1], data[i]) > 0) |bubbleSort_BubbleSortIsSorted_ArrayCorrect
+InsertionSort.java|6|while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) <= 0){ -> while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) > 0){|insertionSort_insertionSortWithThreeSortedElem_WithoutChanges
+InsertionSort.java|8|++cur; -> --cur;|insertionSort_insertionSortWithThreeSortedElem_WithoutChanges
 
-BubbleSort |4| for(int sps = 1; sps < data.length - 1; ++sps)   -> for(int sps = 0; sps < data.length - 1; ++sps)   |bubbleSort_BubbleSortIsUnsorted_CorrectOrder
-
-
-InsertionSort |6| while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) <= 0) -> while (cur > 0 && comparator.compare(data[cur - 1], data[cur]) > 0) |insertionSort_insertionSortWithThreeSortedElem_WithoutChanges
-
-InsertionSort |8| ++cur; -> --cur; |insertionSort_insertionSortWithThreeSortedElem_WithoutChanges
-
-
-SelectionSort|4| for(int sortedSize = 1; sortedSize < data.length - 1; ++sortedSize) -> for(int sortedSize = 0; sortedSize < data.length - 1; ++sortedSize) |selectionSort_SelectionIsUnsorted_CorrectOrder
-
-SelectionSort|5| int maxInd = 1;                                                     ->                        int maxInd = 0;                              |selectionSort_SelectionSortWithNegativeElem_CorrectOrder
-
-SelectionSort|8| maxInd = sortedSize;                                                ->                        maxInd = i;                                  |selectionSort_SelectionSortIsSorted_CorrectOrder
-
-SelectionSort|10|T tmp = data[data.length - sortedSize];                             -> T tmp = data[data.length - 1 - sortedSize];                         |selectionSort_SelectionSortIsSorted_CorrectOrder
-
-SelectionSort|11|data[data.length - sortedSize] = data[maxInd];                      -> data[data.length - 1 - sortedSize] = data[maxInd];                  |selectionSort_SelectionSortIsSorted_CorrectOrder
+SelectionSort.java|4|for(int sortedSize = 1; sortedSize < data.length - 1; ++sortedSize) { -> for(int sortedSize = 0; sortedSize < data.length - 1; ++sortedSize) {|selectionSort_SelectionIsUnsorted_CorrectOrder
+SelectionSort.java|5|int maxInd = 1; -> int maxInd = 0;|selectionSort_SelectionSortWithNegativeElem_CorrectOrder
+SelectionSort.java|8|maxInd = sortedSize; -> maxInd = i;|selectionSort_SelectionSortIsSorted_CorrectOrder
+SelectionSort.java|10|T tmp = data[data.length - sortedSize]; -> T tmp = data[data.length -1- sortedSize];|selectionSort_SelectionSortIsSorted_CorrectOrder
+SelectionSort.java|11|data[data.length - sortedSize] = data[maxInd]; -> data[data.length -1- sortedSize] = data[maxInd];|selectionSort_SelectionSortIsSorted_CorrectOrder
 
