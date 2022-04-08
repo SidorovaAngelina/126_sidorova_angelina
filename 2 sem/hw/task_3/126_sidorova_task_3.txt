@@ -11,7 +11,7 @@ MergeSort.java|32|to[resPos] = from[secondFocus++]; -> to[resPos++] = from[secon
 MergeSort.java|34|to[resPos++] = from[firstFocus]; -> to[resPos++] = from[firstFocus++];|mergeSort_MergeSortWithNegativeElem_CorrectOrder
 QuickSort.java|12|int base = split(data, e, b); -> int base = split(data, b, e);|quickSort_QuickSortIsUnsorted_CorrectOrder
 QuickSort.java|24|swap(data, left, baseElem); -> swap(data, left-1, baseElem);|quickSort_QuickSortIsUnsorted_CorrectOrder
-QuickSort.java|13|qSortRec(data, b, base - 2); -> qSortRec(data, b, base - 1);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort.java|14|qSortRec(data, base + 2, e); -> qSortRec(data, base + 1, e);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort.java|25|baseElem = left; -> baseElem = left - 1;|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
-QuickSort.java|29|swap(data, left + 1, right); -> swap(data, left, right);|quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder
+QuickSort.java|13|qSortRec(data, b, base - 2); -> qSortRec(data, b, base - 1);|quickSort_QuickSortIsUnsortedWithMoreElem_CorrectOrder
+QuickSort.java|14|qSortRec(data, base + 2, e); -> qSortRec(data, base + 1, e);|quickSort_QuickSortIsUnsortedWithMoreElem_CorrectOrder
+QuickSort.java|25|baseElem = left; -> baseElem = left - 1;|quickSort_QuickSortIsUnsortedWithMoreElem_CorrectOrder
+QuickSort.java|29|swap(data, left + 1, right); -> swap(data, left, right);|quickSort_QuickSortIsUnsortedWithMoreElem_CorrectOrder

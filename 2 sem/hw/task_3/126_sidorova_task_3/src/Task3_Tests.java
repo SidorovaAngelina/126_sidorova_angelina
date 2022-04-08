@@ -99,9 +99,9 @@ public class Task3_Tests extends Assert {
     @Test
     public void mergeSort_MergeSortIsUnsortedWithTheSameElem_CorrectOrder(){
         MergeSort<Integer> mergeSort = new MergeSort<>();
-        Integer[] data = { 1, 1, 0, 2, 0, 2};
+        Integer[] data = {0, 0, 1, 2, 2, 1, 2};
         mergeSort.sort(data, new TestComparator());
-        assertArrayEquals(new Integer[]{0, 0, 1, 1, 2, 2}, data);
+        assertArrayEquals(new Integer[]{0, 0, 1, 1, 2, 2, 2}, data);
     }
     @Test
     public void mergeSort_MergeSortWithNegativeElem_CorrectOrder() {
@@ -164,11 +164,11 @@ public class Task3_Tests extends Assert {
         assertArrayEquals(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, data);
     }
     @Test
-    public void quickSort_QuickSortIsUnsortedWithSameElem_CorrectOrder(){
+    public void quickSort_QuickSortIsUnsortedWithMoreElem_CorrectOrder(){
         QuickSort<Integer> quickSort = new QuickSort<>();
-        Integer[] data = {7, 3, 2, 6, 1, 4, 8, 5, 9, 0, 1};
+        Integer[] data = {9, 2, 3, 6, 1, 0, 8, 5, 7, 4};
         quickSort.sort(data, new TestComparator());
-        assertArrayEquals(new Integer[]{0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9}, data);
+        assertArrayEquals(new Integer[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, data);
     }
     @Test
     public void quickSort_QuickSortIsUnsortedWithSameElemAndNegativeElem_CorrectOrder() {
