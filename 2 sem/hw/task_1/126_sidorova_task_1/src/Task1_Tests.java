@@ -25,12 +25,6 @@ public class Task1_Tests extends Assert {
         assertEquals(3, array.getSize());
     }
 
-    @Test
-    public void resize_setNewSizeLessThanSize_WithoutChanges() {
-        DynamicArray<Integer> array = new DynamicArray<>(6);
-        array.resize(2);
-        assertEquals(6, array.getSize());
-    }
 
     @Test
     public void get_getElemAsSize_IndexOutOfBounds() {
@@ -44,24 +38,24 @@ public class Task1_Tests extends Assert {
     }
 
     @Test
-    public void set_setElemWithIndexEqualsSize_ThrowsException() {
-        DynamicArray<Integer> array = new DynamicArray<>(3);
+    public void set_setElemWithIndexEqualsSize_IndexOutOfBounds() {
+        DynamicArray<Integer> dynamicArray = new DynamicArray<>(5);
         try {
-            array.set(3, 10);
+            dynamicArray.set(5, DynamicArray.DefaultSize);
             fail();
         } catch (IndexOutOfBoundsException e) {
-            assertTrue(true);
+            assertEquals("Index out of bounds", e.getMessage());
         }
     }
 
     @Test
-    public void insert_NumbersWithIndexEqualsSize_ThrowsException() {
-        DynamicArray<Integer> array = new DynamicArray<>(5);
+    public void insert_NumbersWithIndexEqualsSize_IndexOutOfBounds() {
+        DynamicArray<Integer> dynamicArray = new DynamicArray<>(5);
         try {
-            array.insert(5, 10);
+            dynamicArray.insert(5, DynamicArray.DefaultSize);
             fail();
         } catch (IndexOutOfBoundsException e) {
-            assertTrue(true);
+            assertEquals("Index out of bounds", e.getMessage());
         }
     }
 
