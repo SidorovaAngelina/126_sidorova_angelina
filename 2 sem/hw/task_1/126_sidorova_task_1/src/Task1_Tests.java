@@ -139,14 +139,15 @@ public class Task1_Tests extends Assert {
         assertEquals(1, list.getSize());
     }
     @Test
-    public void pushFront_pushToEmptyList_HeadAndTailCorrect(){
+    public void pushFront_PushFrontElem_Correct() {
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
-        list.pushFront(5);
-        Node<Integer> head = (Node<Integer>) list.getHead();
-        Node<Integer> tail = (Node<Integer>) list.getTail();
-        assertEquals(5, head.getData().intValue());
-        assertEquals(5, tail.getData().intValue());
-        assertEquals(head, tail);
+        list.pushFront(1);
+        list.pushFront(2);
+        list.pushFront(3);
+        Node<Integer> Head = (Node<Integer>) list.getHead();
+        Node<Integer> Tail = (Node<Integer>) list.getTail();
+        assertEquals(3, Head.getData().intValue());
+        assertEquals(1, Tail.getData().intValue());
     }
     @Test
     public void pushBack_pushToEmptyList_sizeEqualsOne(){

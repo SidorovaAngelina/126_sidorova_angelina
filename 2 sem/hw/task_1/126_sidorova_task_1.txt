@@ -5,7 +5,6 @@ DynamicArray.java|27|newSize=size; -> size=newSize;|resize_setNewPositiveSize_Co
 DynamicArray.java|30|if(index < 0 || index > size) -> if(index < 0 || index >= size)|get_getElemAsSize_IndexOutOfBounds 
 DynamicArray.java|35|if(index < 0 || index > size) -> if(index < 0 || index >= size)|set_setElemWithIndexEqualsSize_IndexOutOfBounds 
 DynamicArray.java|40|if(index < 0 || index > size) -> if(index < 0 || index >= size)|insert_NumbersWithIndexEqualsSize_IndexOutOfBounds
-
 DynamicArray.java|42|if(capacity < size) { -> if(capacity <= size) {|insert_insertElem_Correct
 DynamicArray.java|49|data[size] = value; -> data[index] = value;|insert_insertElem_Correct
 DynamicArray.java|52|if(capacity < size) { -> if(capacity <= size) {|pushBack_pushBackElem_ElemCorrect
@@ -15,14 +14,13 @@ DynamicArray.java|66|if(index < 0 || index > size) -> if(index < 0 || index >= s
 Node.java|13|this.next = prev; -> this.next = next;|getNext_getDataOfNextElem_ElemCorrect
 Node.java|14|this.prev = next; -> this.prev = prev;|getNext_getDataOfNextElem_ElemCorrect
 DoubleLinkedList.java|11|return dummy == dummy; -> return dummy == dummy.getNext();|isEmpty_checkListWithElem_isEmptyFalse
-
-     DoubleLinkedList.java|17|return dummy.getPrev(); -> return dummy.getNext();|pushFront_pushToEmptyList_HeadAndTailCorrect
-     DoubleLinkedList.java|20|return dummy.getNext(); -> return dummy.getPrev();|pushFront_pushToEmptyList_HeadAndTailCorrect
+DoubleLinkedList.java|17|return dummy.getPrev(); -> return dummy.getNext();|pushFront_PushFrontElem_Correct
+DoubleLinkedList.java|20|return dummy.getNext(); -> return dummy.getPrev();|pushFront_PushFrontElem_Correct
+DoubleLinkedList.java|41|return insertBefore(getTail(), data); -> return insertBefore(getHead(), data);|pushFront_PushFrontElem_Correct
 
 DoubleLinkedList.java|33|--size; -> ++size;|pushBack_pushToEmptyList_sizeEqualsOne
 DoubleLinkedList.java|28|cur = cur.getPrev(); -> cur = cur.getNext();|get_getElemByIndex_GetCorrectElem
 DoubleLinkedList.java|24|if(index < 0 || index > size) -> if(index < 0 || index >= size)|get_getElemByIndexEqualsSize_ThrowsException
-DoubleLinkedList.java|41|return insertBefore(getTail(), data); -> return insertBefore(getHead(), data);|pushFront_pushThreeElem_HeadAndTailAreCorrect
 DoubleLinkedList.java|44|return insertAfter(getHead(), data); -> return insertAfter(getTail(), data);|pushFront_pushThreeElem_HeadAndTailAreCorrect
 DoubleLinkedList.java|47|node.getPrev().setPrev(node.getNext()); -> node.getPrev().setNext(node.getNext());|remove_RemoveElemFromList_ElemAreMoved
 DoubleLinkedList.java|48|node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev());|remove_RemoveElemFromList_ElemAreMoved
