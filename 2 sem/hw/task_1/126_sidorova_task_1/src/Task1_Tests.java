@@ -155,6 +155,7 @@ public class Task1_Tests extends Assert {
         list.pushBack(5);
         assertEquals(1, list.getSize());
     }
+    
     @Test
     public void get_getElemByIndex_GetCorrectElem(){
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
