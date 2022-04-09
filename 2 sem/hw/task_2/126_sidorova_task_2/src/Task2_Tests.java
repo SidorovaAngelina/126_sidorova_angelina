@@ -81,11 +81,19 @@ public class Task2_Tests extends Assert {
     }
 
     @Test
+    public void selectionSort_SelectionSortWithMaxOnTheFirstPlace_CorrectOrder(){
+        SelectionSort<Integer> selectionSort = new SelectionSort<>();
+        Integer[] data = {6,4,2};
+        selectionSort.sort(data, new TestComparator());
+        assertArrayEquals(new Integer[]{2,4,6}, data);
+    }
+
+    @Test
     public void selectionSort_SelectionIsUnsorted_CorrectOrder(){
         SelectionSort<Integer> selectionSort = new SelectionSort<>();
-        Integer[] data = {7,3};
+        Integer[] data = {7, 3};
         selectionSort.sort(data, new TestComparator());
-        assertArrayEquals(new Integer[]{3,7}, data);
+        assertArrayEquals(new Integer[]{3, 7}, data);
     }
 
 
@@ -97,19 +105,5 @@ public class Task2_Tests extends Assert {
         assertArrayEquals(new Integer[]{3,3,3}, data);
     }
 
-    @Test
-    public void selectionSort_SelectionSortWithNegativeElem_CorrectOrder(){
-        SelectionSort<Integer> selectionSort = new SelectionSort<>();
-        Integer[] data = {5, 0, -3};
-        selectionSort.sort(data, new TestComparator());
-        assertArrayEquals(new Integer[]{-3, 0, 5}, data);
-    }
 
-    @Test
-    public void selectionSort_SelectionSortWithMaxOnTheFirstPlace_CorrectOrder(){
-        SelectionSort<Integer> selectionSort = new SelectionSort<>();
-        Integer[] data = {6,4,2};
-        selectionSort.sort(data, new TestComparator());
-        assertArrayEquals(new Integer[]{2,4,6}, data);
-    }
 }
