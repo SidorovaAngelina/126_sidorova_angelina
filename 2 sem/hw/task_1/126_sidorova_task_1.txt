@@ -21,7 +21,7 @@ DoubleLinkedList.java|33|--size; -> ++size;|pushBack_pushToEmptyList_sizeEqualsO
 DoubleLinkedList.java|28|cur = cur.getPrev(); -> cur = cur.getNext();|get_getElemByIndex_GetCorrectElem
 DoubleLinkedList.java|24|if(index < 0 || index > size) -> if(index < 0 || index >= size)|getIndex_GetIndexAsSize_IndexOutOfBounds
 
-DoubleLinkedList.java|44|return insertAfter(getHead(), data); -> return insertAfter(getTail(), data);|pushFront_pushThreeElem_HeadAndTailAreCorrect
+DoubleLinkedList.java|44|return insertAfter(getHead(), data); -> return insertAfter(getTail(), data);|pushBack_pushThreeElements_CorrectTails
 DoubleLinkedList.java|47|node.getPrev().setPrev(node.getNext()); -> node.getPrev().setNext(node.getNext());|remove_RemoveElemFromList_ElemAreMoved
 DoubleLinkedList.java|48|node.getNext().setNext(node.getPrev()); -> node.getNext().setPrev(node.getPrev());|remove_RemoveElemFromList_ElemAreMoved
 DoubleLinkedList.java|55|list.getHead().setNext(node); -> list.getHead().setPrev(node);|insertListAfter_insertListAfterSecondElem_OrderIsCorrect

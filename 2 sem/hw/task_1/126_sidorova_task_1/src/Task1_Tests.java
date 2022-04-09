@@ -185,15 +185,12 @@ public class Task1_Tests extends Assert {
         assertEquals(2, list.getSize());
     }
     @Test
-    public void pushFront_pushThreeElem_HeadAndTailAreCorrect(){
+    public void pushBack_pushThreeElements_CorrectTails(){
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
-        list.pushFront(5);
-        list.pushFront(3);
-        list.pushFront(7);
-        Node<Integer> head = (Node<Integer>) list.getHead();
-        Node<Integer> tail = (Node<Integer>) list.getTail();
-        assertEquals(7, head.getData().intValue());
-        assertEquals(5, tail.getData().intValue());
+        list.pushBack(1);
+        list.pushBack(2);
+        Node<Integer> elem = list.pushBack(3);
+        assertEquals(elem, list.getTail());
     }
     @Test
     public void remove_RemoveElemFromList_ListIsEmpty(){
