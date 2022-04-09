@@ -200,16 +200,22 @@ public class Task1_Tests extends Assert {
         assertTrue(list.isEmpty());
     }
     @Test
-    public void remove_RemoveElemFromList_ElemAreMoved(){
+    public void remove_removeElemFromList_getNextCorrect(){
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
-        Node<Integer> ElemFirst = (Node<Integer>) list.pushBack(1);
-        Node<Integer> ElemSecond = (Node<Integer>) list.pushBack(5);
-        Node<Integer> ElemThird = (Node<Integer>) list.pushBack(7);
-        list.remove(ElemFirst);
-        Node<Integer> Head = (Node<Integer>) list.getHead();
-        Node<Integer> Tail = (Node<Integer>) list.getTail();
-        assertEquals(5, Head.getData().intValue());
-        assertEquals(7, Tail.getData().intValue());
+        Node<Integer> elem = (Node<Integer>) list.pushBack(2);
+        list.pushFront(1);
+        Node<Integer> tail = list.pushBack(3);
+        list.remove(elem);
+        assertEquals(tail, list.getHead().getNext());
+    }
+    @Test
+    public void remove_removeElemFromList_getPrevCorrect(){
+        DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+        Node<Integer> elem = (Node<Integer>) list.pushBack(2);
+        Node<Integer> head = list.pushFront(1);
+        list.pushBack(3);
+        list.remove(elem);
+        assertEquals(head, list.getTail().getPrev());
     }
     @Test
     public void insertListAfter_insertListAfterSecondElem_OrderIsCorrect(){
