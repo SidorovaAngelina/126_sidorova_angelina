@@ -12,7 +12,6 @@ x 40 x x x 70 x x x x x x x
 78 40 26 16 43 70 5 14 54 x 49 11 x
 78 40 26 16 43 70 5 14 54 x 49 11 89
 
-
 Offset_hash_2
 x x 40 x x x x x x x x x x x x x x x x
 x x 40 x x 24 x x x x x x x x x x x x x
@@ -34,7 +33,6 @@ x x 40 78 23 24 6 59 84 x 67 x x 32 x x 73 54 75
 x x 40 78 23 24 59 x 84 x 67 x x 32 x x 73 54 75
 x x 40 78 23 24 59 x 84 x 67 x x x x x 73 54 75
 x x 40 78 23 24 59 x x x 67 x x x x x 73 54 75
-
 
 Offset_hash_3
 x x x x x x x x x x x x x x x x 35 x x
@@ -65,7 +63,6 @@ x 77 x x 61 4 x 26 84 8 x x x x 33 x 35 16 56
 38 76 x x 4 x 44 x 8 x x 87 x x 33 x 16 x 56
 38 76 x x 4 x 44 x 8 x x 87 x x x x 16 x 56
 38 76 x x 4 x 44 x x x x 87 x x x x 16 x 56
-
 
 List_hash_1
 x
@@ -235,7 +232,6 @@ x
 x
 37 x
 x
-
 
 List_hash_2
 x
@@ -637,7 +633,6 @@ x
 x
 x
 x
-
 
 List_hash_3
 x
